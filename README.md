@@ -123,6 +123,14 @@ H.264 output uses the NV12 4:2:0 pixel format required by the Media Foundation e
 
 Neither mode converts H.264 into 4:4:4 or lossless video. Use `PNG Sequence Only` when exact per-pixel color preservation is required.
 
+## Audio capture and export FPS
+
+Enable `Capture Audio` to capture Unity's final audio mix and include it in MP4 output. The captured mix is the sound heard through the active `AudioListener`, including Unity `AudioSource` spatialization and mixer processing.
+
+Audio capture follows the Unity simulation used by the export. Sounds started by `Update`, `OnFrameRequested`, animation events, or other frame-driven scene logic can therefore depend on the selected export FPS. At 1 FPS, for example, that logic is evaluated only once per exported second, so short or rapidly triggered sounds may start late, overlap differently, or be missed by scene code. This is expected behavior for frame-driven events rather than an audio encoding problem.
+
+Use a normal delivery frame rate such as 30 or 60 FPS when capturing general scene audio. The MIDI sample demonstrates a different use case: audio generated from a continuous sample-based timeline, providing consistent timing independently of the export FPS. This timeline-based behavior is implemented by the sample and is not applied automatically to arbitrary `AudioSource` components.
+
 ## Deterministic frame control
 
 The exporter invokes `OnFrameRequested(frameIndex, time)` immediately before capturing each frame. Use it when animation, MIDI playback, Timeline, replay data, or simulation must be evaluated at the exact exported time.
@@ -231,7 +239,7 @@ Call `CancelExport()` to stop an active export.
 ## Current limitations
 
 - MP4 uses H.264 and is not lossless.
-- Audio export is not included.
+- Audio capture is optional and follows Unity's active audio mix and simulation timing.
 - Alpha is not preserved in H.264 MP4 output.
 - XR, VR, and stereo capture are not officially validated.
 - Screen Space Overlay UI is not captured in Direct Camera mode.
