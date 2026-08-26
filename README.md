@@ -5,7 +5,7 @@ Export a Unity Camera or the Game View at runtime to H.264 MP4, PNG sequences, P
 The original straightforward MP4/PNG workflow remains available. Deterministic rendering, responsive real-time capture, background PNG workers, GPU readback, experimental NV12 conversion, diagnostics, and scripting APIs can be enabled only when needed.
 
 
-Addon Page: [UnityAssetStore](https://assetstore.unity.com/packages/tools/video/offline-real-time-runtime-camera-exporter-mp4-png-screenshots-wi-388512)
+Addon Page: [UnityAssetStore: offline-real-time-runtime-camera-exporter](https://assetstore.unity.com/packages/tools/video/offline-real-time-runtime-camera-exporter-mp4-png-screenshots-wi-388512)
 
 ## Main features
 
