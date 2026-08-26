@@ -98,4 +98,3 @@ public sealed class ExportExample : MonoBehaviour
 - Disabling Async GPU Readback in deterministic mode uses blocking `ReadPixels`.
 - Only one export or screenshot render phase can run at a time.
 
-For every setting, API member, capture mode, diagnostic field, sample scene, limitation, and troubleshooting procedure, see **[DOCUMENTATION.md](DOCUMENTATION.md)**.
