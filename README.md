@@ -4,8 +4,6 @@ Export a Unity Camera or the Game View at runtime to H.264 MP4, PNG sequences, P
 
 The original straightforward MP4/PNG workflow remains available. Deterministic rendering, responsive real-time capture, background PNG workers, GPU readback, experimental NV12 conversion, diagnostics, and scripting APIs can be enabled only when needed.
 
-**[Open the complete documentation](DOCUMENTATION.md)**  
-Bug reports: [GitHub repository](https://github.com/AIGLE25/Offline-Runtime-Render-Exporter-Unity)
 
 ## Main features
 
